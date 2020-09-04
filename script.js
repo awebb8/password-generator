@@ -10,12 +10,13 @@ const number = [1,2,3,4,5,6,7,8,9];
 
 // Variables retreived through prompts
 var pwLength = prompt("Please enter the length you want your password to be, from 8 - 128 characters");
-  // if length between 8 & 128, then log it, else prompt user again
-  if (pwLength < 8 || length > 128 || pwLength.isNan) {
+  // if length is not between 8 & 128, alert the user.
+  if (isNaN(pwLength) == true || pwLength < 8 || pwLength > 128) {
     alert("ERROR: Please resubmit with a valid password character length (a number 8 - 128)");
     console.log("length");
-    // length = prompt("Please enter a valid number for the password character length, from 8 - 128");
-  } // while (length < 8 || length > 128 || length.isNaN)
+    return;
+  }
+
 var uppercaseConfirm = confirm("Do you want uppercase letters in your password?  Select OK for yes, Cancel for no.");
 var lowercaseConfirm = confirm("Do you want lowercase letters in your password?  Select OK for yes, Cancel for no.");
 var numericConfirm = confirm("Do you want numbers in your password?  Select OK for yes, Cancel for no.");
@@ -47,6 +48,14 @@ if (specialConfirm) {
   console.log(charArray);
 }
 
+// Ensure at least one character type was chosen by the user.
+if (uppercaseConfirm == false && lowercaseConfirm == false && numericConfirm == false && specialConfirm == false) {
+  alert("You must select at least one character type.");
+  return;
+}
+
+// function generatePassword
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword());
 
@@ -65,4 +74,5 @@ function writePassword() {
     console.log(randomPassword);
     passwordResult.value = randomPassword;
   }
+  return randomPassword;
 }
