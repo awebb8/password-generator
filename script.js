@@ -53,7 +53,7 @@ if (uppercaseConfirm == false && lowercaseConfirm == false && numericConfirm == 
 }
 
 // When the generate button is clicked, run the generatePassword and writePassword functions.
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword());
 
 
 // Write password to the #password input
@@ -70,5 +70,4 @@ function writePassword() {
     console.log(randomPassword);
     passwordResult.value = randomPassword;
   }
-  return randomPassword;
 }
