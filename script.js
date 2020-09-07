@@ -73,18 +73,19 @@ function generatePassword() {
     if (uppercaseConfirm == false && lowercaseConfirm == false && numericConfirm == false && specialConfirm == false) {
     alert("You must select at least one character type.");
     }
-        
+
+    // Define randomPassword, which will be used to store our string of random characters.
+    var randomPassword = "";
+
     // Run for loop to randomly generate characters
     for (var i = 0; i < passwordLength; i++) {
         var randomChar = "";
         // Randomly pull a char from the huge array of all char options
         randomChar = charArray[Math.floor(Math.random()*charArray.length)];
-        console.log(randomChar);
         
         // Add each random character to a string to create the password
-        var randomPassword = "";
         randomPassword = randomPassword.concat(randomChar);
-        // randomPassword = randomPassword.concat(charArray[Math.floor(Math.random()*charArray.length)]);
+        //randomPassword = randomPassword.concat(charArray[Math.floor(Math.random()*charArray.length)]);
         // alternate code: randomPassword += randomChar;
         console.log(randomPassword);
     }
