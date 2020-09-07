@@ -11,7 +11,6 @@ const number = [1,2,3,4,5,6,7,8,9];
 // writePassword function runs when the "Generate Button" password is clicked
 function writePassword() {
     password = generatePassword();
-    console.log(password);
     // the password is displayed in the #password box
     passwordText.value = password;
     return;
@@ -79,14 +78,8 @@ function generatePassword() {
 
     // Run for loop to randomly generate characters
     for (var i = 0; i < passwordLength; i++) {
-        var randomChar = "";
-        // Randomly pull a char from the huge array of all char options
-        randomChar = charArray[Math.floor(Math.random()*charArray.length)];
-        
-        // Add each random character to a string to create the password
-        randomPassword = randomPassword.concat(randomChar);
-        //randomPassword = randomPassword.concat(charArray[Math.floor(Math.random()*charArray.length)]);
-        // alternate code: randomPassword += randomChar;
+        // Randomly pull a char from the huge array of all char options, and add each random character to a string to create the password
+        randomPassword = randomPassword.concat(charArray[Math.floor(Math.random()*charArray.length)]);
         console.log(randomPassword);
     }
     return randomPassword;
