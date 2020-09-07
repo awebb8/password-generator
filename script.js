@@ -81,6 +81,7 @@ function generatePassword() {
         randomChar = charArray[Math.floor(Math.random()*charArray.length)];
         console.log(randomChar);
         
+        // Add each random character to a string to create the password
         var randomPassword = "";
         randomPassword = randomPassword.concat(randomChar);
         // randomPassword = randomPassword.concat(charArray[Math.floor(Math.random()*charArray.length)]);
